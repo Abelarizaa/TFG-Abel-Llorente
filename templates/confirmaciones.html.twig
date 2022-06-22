@@ -1,0 +1,35 @@
+
+<html>
+<body>
+</br>
+
+   {% block stylesheets %}
+        <link href="{{ asset('login.css') }}" type="text/css" rel="stylesheet" />
+    {% endblock %}
+
+    <body>		
+
+		<hr>
+		
+		<div class="login">
+  		<div class="login-triangle"></div>
+  		{% if mensaje is defined %}
+		 <h2 class="login-header"><img src="recursos/logo.png" alt="Logo"></h2>
+		{% endif %}
+    	<form class="login-container" action="{{ path('controlador_login') }}" method="post">
+			
+		{% if mensaje is defined %}
+		{{ mensaje }}
+		{% endif %}
+			<br/>
+			<a href={{path('controlador_login')}}>Ir a login </a></br>
+
+		</form>
+		
+		<br/>
+
+		
+    </body>
+
+</body>
+</html>

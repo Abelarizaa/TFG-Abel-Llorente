@@ -1,0 +1,205 @@
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.clearfix {
+    clear: both;
+    float: none;
+}
+
+.wrap {
+    width: 1250px;
+    margin: 0 auto;
+}
+
+body {
+    background-color: #51d1f6;
+}
+
+
+/*css header*/
+
+
+#header {
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: 40px;
+  font-family: Arial;
+  text-transform: uppercase;
+}
+
+#header h3:hover {
+    color: #92b1c5 ;
+}
+
+/*css tabla*/
+
+#tabla {
+    width: 75%;
+    margin: 0 auto;
+    margin-top: 50px;
+    box-shadow: 0px 0px 12px 8px rgba(0,0,0,0.36);
+    border-collapse: collapse;
+    cursor: pointer;
+    font-family: sans-serif;
+}
+
+#tabla th {
+    font-weight: bold;
+    padding: 15px;
+    background-color: #212639;
+    color: #92b1c5;
+    transition: all 300ms;
+}
+
+#tabla th:hover {
+    color: white;
+}
+
+#tabla tr:nth-child(odd){
+    background-color: #353c4e;
+}
+
+#tabla tr:nth-child(even){
+    background-color: #2d3446;
+}
+
+#tabla td:first-child{
+    color: #a85d6f;
+}
+
+#tabla td {
+    text-align: center;
+    font-size: 16px;
+    padding: 10px;
+    color: #85899b;
+}
+
+.cabecera {
+  color: #6c2eb9;
+  font-weight: normal;
+  font-size: 40px;
+  font-family: Arial;
+  text-transform: uppercase;
+}
+
+.boton1 {
+  min-width: 100px;
+  min-height: 20px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  z-index: 0;
+  background: #fff;
+  overflow: hidden;
+  border: 2px solid #4433ff;
+  color: #4433ff;
+}
+
+.boton1:hover {
+
+    background: #4433ff;
+    color: white;
+}
+.avisodar {
+  min-width: 100px;
+  min-height: 20px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  z-index: 0;
+  background: #fff;
+  overflow: hidden;
+  border: 2px solid #4433ff;
+  color: #4433ff;
+}
+
+.avisodar:hover {
+
+    background: red;
+    color: white;
+}
+
+.avisoquitar {
+  min-width: 100px;
+  min-height: 20px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  z-index: 0;
+  background: #fff;
+  overflow: hidden;
+  border: 2px solid #4433ff;
+  color: #4433ff;
+}
+
+.avisoquitar:hover {
+
+    background: #77DD77;
+    color: white;
+}
+
+
+/*responsive*/
+
+@media only screen 
+and (max-width: 600px), (max-device-width: 768px) 
+and (max-device-width: 1024px){
+
+    #header{
+        width: 50%;
+        display: block;
+    }
+
+    .wrap {
+        width: 75%;
+        height: auto;
+    }
+
+    #tabla {
+        display: block;
+        overflow-x: auto;
+        width:75%;
+        margin-top: 0;
+        top: 0px;
+    }
+
+    #tabla td {
+        font-size: 10px;
+        padding: 21px;
+    }
+
+    #tabla th {  
+        font-size: 10px;
+        padding: 0;
+        height: 46px;
+    }
+
+    #header h3 {
+        font-size: 12px;
+    }
+}
+
+
+
+

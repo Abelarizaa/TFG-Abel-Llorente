@@ -1,0 +1,44 @@
+{# templates/login.html.twig #}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>GeniusPadel</title>
+
+
+   {% block stylesheets %}
+        <link href="{{ asset('login.css') }}" type="text/css" rel="stylesheet" />
+    {% endblock %}
+	<link rel="icon" href="recursos/favicon.png">
+    </head>
+    <body>		
+		<hr>
+		
+		<div class="login">
+  		<div class="login-triangle"></div>
+  
+  		{% if mensaje is defined %}
+		<h2 class="login-header"><img src="../../recursos/logo.png" alt="Logo">
+		{{ mensaje }}
+		</h2>
+		{% else %}
+  		<h2 class="login-header"><img src="recursos/logo.png" alt="Logo"></h2>
+		{% endif %}
+    	<form class="login-container" action="{{ path('controlador_login') }}" method="post">
+			<br>
+			
+			<input type="text" name="_username" placeholder="Nombre de usuario"/>
+			<br>
+			Clave
+			<input type="password" name="_password" placeholder="Contraseña" />
+			<br>
+			<input type="submit" value="LOG IN"/>
+		<td style=><a href={{path('registro')}}>¡Regístrate! </a></td></br>
+		<td style=><a href={{path('recuperacionclave')}}>¿Has olvidado tu contraseña? </a></td>
+		</form>
+		
+		<br/>
+
+		
+    </body>
+</html>

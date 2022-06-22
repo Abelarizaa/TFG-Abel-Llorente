@@ -1,0 +1,7 @@
+	   {% block stylesheets %}
+        <link href="{{ asset('tablas.css') }}" type="text/css" rel="stylesheet" />
+    {% endblock %}
+<h1> Formulario de cambio de contraseña </h1>
+{{ form_start(form) }}
+{{ form_widget(form) }}
+{{ form_end(form) }}

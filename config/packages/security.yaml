@@ -1,0 +1,33 @@
+security:
+    # Creamos un proveedor, es decir, un elemento para indicar de dónde sacar los usuarios.
+    providers:
+         proveedor_usuarios_app_whatschat:
+            # Los sacamos de la base de datos, a través de una entidad Doctrine.
+            # Indicamos la ruta y el atributo de la clase que representa el nombre de usuario.
+             entity:
+                 class: App\Entity\Usuario
+                 property: usuario
+    # El encoder indica cómo hay que cifrar la contraseña. En este caso utilizamos el algoritmo "auto".
+    encoders:
+         App\Entity\Usuario:
+          algorithm: 'auto'
+    # El siguiente bloque es de autenticación.  Define qué partes de la aplicación están
+    # protegidas y cómo deben autenticarse los usuarios.
+    firewalls:
+        # La siguiente parte es interna de Doctrine.
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            anonymous: true
+            # Indicamos un formulario de login como punto de autenticación.
+            form_login:
+                login_path: controlador_login
+                check_path: controlador_login
+                default_target_path: area_usuario
+            provider: proveedor_usuarios_app_whatschat
+            logout:
+                path: controlador_logout
+                target: controlador_login
+        
+        

@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Geniuspadel</title>
+	{% block stylesheets %}
+        <link href="{{ asset('tablas.css') }}" type="text/css" rel="stylesheet" />
+		<link href="{{ asset('formularios.css') }}" type="text/css" rel="stylesheet" />
+    {% endblock %}
+		<link rel="icon" href="recursos/favicon.png">
+   </head>
+
+
+</br>
+{% include 'cabecera.html.twig' %}
+<table id="tabla">
+<thead>
+<tr><th colspan="6">ESTADO DE USUARIOS<hr/></th></tr>
+<tr>
+	<th>Nombre de usuario</th>
+	<th>Nombre</th>
+	<th>Apellidos</th>
+	<th>Número de avisos</th>
+	<th></th>
+	<th></th>
+</tr>	
+<tr>
+</thead>
+<tbody>
+{% for usuario in usuarios %}
+<tr>
+<form action={{path('gestionusuarios')}} method="post" enctype="multipart/form-data">
+	<td>{{usuario.usuario}}</td>
+	<td>{{usuario.nombre}}</td>
+	<td>{{usuario.apellidos}}</td>
+	<td>{{usuario.avisos}}</td>
+	<input type="hidden" name="usuario" value={{usuario.usuario}}>
+	<td> <a href={{path('gestionusuarios')}}><button class="avisodar" name="daraviso"> Dar aviso </button></a> <br/>
+	{% if usuario.avisos >0 %}
+	<a href={{path('gestionusuarios')}}><button class="avisoquitar" name="quitaraviso"> Retirar 1 aviso </button></a>
+	</td>
+	{% endif %}
+	{% if usuario.bloqueo == true %}
+	<td> <a href={{path('gestionusuarios')}}><button class="avisoquitar" name="desbloquear"> Desbloquear </button></a> <br/>
+	{% else %}
+	<td> <a href={{path('gestionusuarios')}}><button class="avisodar" name="bloquear"> Bloquear </button></a> <br/>
+	{% endif %}
+</form>
+</tr>
+{% endfor %}
+</tr>
+</table>
+</div>
+<hr/>
+
+
+ </html>

@@ -1,0 +1,21 @@
+{% include 'cabeceraAdmin.html.twig' %}
+
+	{% block javascripts %}
+        <script src="{{ asset('funciones.js') }}" type="text/javascript"></script>
+    {% endblock %}
+<title>Zona de administración</title>
+<h1>
+Zona de administracion
+</h1>
+<table>
+<tr><td>Foto de perfil</td><td>Nombre</td><td>Edad</td><td>Aficiones</td><td>Bloqueo</td></tr>
+{% for usuario in usuarios %}
+<tr><td><img src="uploads/{{usuario.avatar}}" width="80" height="80"></td><td>{{ usuario.usuario }}</td><td>{{ usuario.edad }}</td><td>{{ usuario.aficiones }}</td>
+{% if usuario.bloqueo %}
+<td><button onclick = "bloquear('{{usuario.usuario}}',0);">DESBLOQUEAR</button></td>
+{% else %}
+<td><button onclick = "bloquear('{{usuario.usuario}}',1);">BLOQUEAR</button></td>
+{% endif %}
+</tr>
+{% endfor %}
+</table>

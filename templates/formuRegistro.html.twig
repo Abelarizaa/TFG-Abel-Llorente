@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Registro!</title>
+   {% block stylesheets %}
+        <link href="{{ asset('login.css') }}" type="text/css" rel="stylesheet" />
+    {% endblock %}
+   </head>
+
+
+</br>
+	<div class="login">
+  		<div class="login-triangle"></div>
+  
+  		<h2 class="login-header"><img src="recursos/logo.png" alt="Logo"></h2>
+
+  <form class="login-container" action="{{ path('registro') }}" method="post">
+	<p><input type="text" name="nombre" placeholder="Nombre de usuario"/></p>
+	<p><input type="text" name="email" placeholder="E-Mail"/></p>
+	<p><input type="password" name="clave" placeholder="Contraseña"/></p>  
+	<p><input type="submit" value="¡Regístrame!"></p>
+	
+	<td><a href={{path('recuperacionclave')}}>¿Has olvidado tu contraseña? </a></td>
+ 	<br/><a href={{path('controlador_login')}}>Ir a login </a>
+</form>
+</div>
+    	
+
+ </html>

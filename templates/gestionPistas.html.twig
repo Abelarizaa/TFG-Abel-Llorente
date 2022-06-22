@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Geniuspadel</title>
+	{% block stylesheets %}
+        <link href="{{ asset('tablas.css') }}" type="text/css" rel="stylesheet" />
+		<link href="{{ asset('formularios.css') }}" type="text/css" rel="stylesheet" />
+    {% endblock %}
+		<link rel="icon" href="recursos/favicon.png">
+   </head>
+
+
+</br>
+{% include 'cabecera.html.twig' %}
+<table id="tabla">
+<thead>
+<tr><th colspan="6">GESTIÓN DE PISTAS<hr/></th></tr>
+<tr>
+	<th>Número de pista</th>
+	<th>Tipo de pista</th>
+	<th>Fotografía</th>
+	<th>Cambiar fotografía</th>
+	<th></th>
+	<th></th>
+</tr>	
+<tr>
+</thead>
+<tbody>
+{% for pista in pistas %}
+<tr>
+<form action={{path('cambiopista')}} method="post" enctype="multipart/form-data">
+	<td>{{pista.id}}</td>
+	<input type="hidden" name="idpista" value={{pista.id}}>
+	<input type="hidden" name="cambiopista" value="cambio">
+	<td>
+	<div class="col-3 input-effect">
+		<input type="text" name="tipopista" value={{pista.tipo_pista}} class="inputexto"></td>
+		<span class="focus-border"></span>
+	</div>
+	<td><img src="uploads/{{pista.fotopista}}" width="80" height="80"></td>
+	<td><input accept="image/*" type="file" name="fotopista" class="boton1"></td>	
+	<td><input type="submit" name="cambio" value="Cambiar pista" class="boton1"></td>
+	<td><input type="submit" name="borrar" value="Eliminar pista" class="boton1"></td>
+</form>
+</tr>
+{% endfor %}
+</tr>
+</table>
+</div>
+<hr/>
+<tbody>
+ 
+<form action={{path('cambiopista')}} method="post" enctype="multipart/form-data">
+	<h3> Añadir pista </h3>
+	<td><input type="number" name="idpista" placeholder="Nº" min="1" max="99"></td>
+	<td><input type="text" name="tipopista" placeholder="Tipo de pista"></td>
+	<td><input accept="image/*" type="file" name="fotopista"></td>	
+	<td><input type="submit" name="nueva" value="Añadir pista"></td>
+</form>
+
+ </html>

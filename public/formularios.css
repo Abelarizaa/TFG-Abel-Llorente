@@ -1,0 +1,53 @@
+  .inputexto
+  {
+  border: 1px solid #DBE1EB;
+  font-size: 18px;
+  font-family: Arial, Verdana;
+  padding-left: 7px;
+  padding-right: 7px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -o-border-radius: 4px;
+  background: #FFFFFF;
+  background: linear-gradient(left, #FFFFFF, #F7F9FA);
+  background: -moz-linear-gradient(left, #FFFFFF, #F7F9FA);
+  background: -webkit-linear-gradient(left, #FFFFFF, #F7F9FA);
+  background: -o-linear-gradient(left, #FFFFFF, #F7F9FA);
+  color: #2E3133;
+  }
+  
+  .inputexto:focus
+  {
+  color: #2E3133;
+  border-color: #FBFFAD;
+  }
+
+
+
+form {
+   margin: 0 auto; /* Centramos el formulario */
+   width: 300px;   /* Sin ancho no podemos centrar el formulario */
+   background-color: white; /* Color blanco para el formulario */
+   padding: 2px; /* separamos los bordes del form del resto de elementos */
+   border-radius: 10px; /* Redondeamos los bordes del form */
+}
+
+input, text {
+    padding: 5px; /* Separamos la letra del interior (contenido) en los inputs de los bordes */
+}
+
+label {
+    display: block; /* Ahora los inputs quedan debajo de los label */
+    padding: 5px; /* Separando espacios internos */
+}
+
+li {
+    margin: 10px; /* dando márgenes a todos los elementos de la lista */
+}
+
+.btn{
+    margin-top: 20px; /* Damos un margen individual para el contenedor del botón */
+}

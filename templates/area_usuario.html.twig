@@ -1,0 +1,69 @@
+
+
+
+	
+
+	{% include 'cabecera.html.twig' %}
+	{% if usuario.bloqueo == 0%}
+		{% block stylesheets %}
+        <link href="{{ asset('tablas.css') }}" type="text/css" rel="stylesheet" />
+		<link href="{{ asset('formularios.css') }}" type="text/css" rel="stylesheet" />
+    {% endblock %}
+<style>
+@import url(https://fonts.googleapis.com/css?family=Roboto:400);
+form{
+  padding: 25px;
+  max-width: 400px;
+  background-color: #E7E7E7;
+  margin: 0 auto;
+}
+
+
+form input, form text{
+  margin-bottom: 8px;
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box; 
+  border: none; 
+  color: #525c66; 
+  font-size: 1em;
+  resize: none; 
+}
+
+form button {
+	display: block;
+	background-color: #0095eb;
+	padding: 10px 45px 10px 45px;
+	border: 0;
+	font-size: 1em; 
+	color: 	white;
+  font-family: "Roboto", sans-serif;
+}
+form button: hover{
+	background-color: #046193;
+}
+
+label {
+    display: block; 
+    padding: 5px; 
+}
+	</style>
+<h1> Bienvenido a tu perfil {{ usuario.nombre }} </h1>
+
+<form action={{path('area_usuario')}} method="post" enctype="multipart/form-data">
+
+	<label>Nombre de usuario: {{usuario.usuario}}</label>
+	<label>Nombre</label>
+	<input type="text" name="nombre" value={{usuario.nombre}} >
+	<label>Apellidos</label>
+	<input type="text" name="apellidos" value={{usuario.apellidos}} >
+	<label>Correo</label>
+	<input type="text" name="email" value={{usuario.email}} >
+	<button type="submit" name="cambio">Actualizar</button>
+	<label>Número de avisos: {{usuario.avisos}}</label>
+	{% if usuario.avisos > 0%}
+	<br/>Ten cuidado o tu cuenta puede ser bloqueada
+	{% endif %}
+</form>
+{% endif%}
